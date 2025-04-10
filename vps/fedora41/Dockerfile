@@ -1,6 +1,8 @@
 FROM vps-fedora-41-image:latest
 
 USER root
+RUN dnf update -y
+RUN dnf install -y python3
 
 RUN adduser ansible
 RUN usermod -aG wheel ansible

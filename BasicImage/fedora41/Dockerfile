@@ -7,6 +7,7 @@ USER root
 RUN dnf -y update 
 RUN dnf -y install vim
 RUN dnf -y install openssh-server
+RUN dnf -y install openssh-clients
 
 # netstat
 RUN dnf install -y net-tools

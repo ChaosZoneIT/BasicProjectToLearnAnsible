@@ -9,6 +9,7 @@ RUN dnf update -y
 RUN dnf install -y vim
 RUN dnf install -y openssh-server
 RUN dnf install -y sudo.x86_64
+RUN dnf install -y openssh-clients
 
 # netstat
 RUN dnf install -y net-tools

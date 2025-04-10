@@ -9,6 +9,7 @@ RUN microdnf update -y
 RUN microdnf install -y vim
 RUN microdnf install -y openssh-server
 RUN microdnf install -y sudo.x86_64
+RUN microdnf install -y openssh-clients
 
 # netstat
 RUN microdnf install -y net-tools

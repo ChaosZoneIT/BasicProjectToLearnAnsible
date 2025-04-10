@@ -8,6 +8,7 @@ RUN yum update -y
 RUN yum install -y vim
 RUN yum install -y openssh-server
 RUN dnf install -y sudo.x86_64
+RUN dnf install -y openssh-clients
 
 # netstat
 RUN yum install -y net-tools
