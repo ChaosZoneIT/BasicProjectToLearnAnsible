@@ -57,7 +57,7 @@ ssh ansible@172.16.128.2
 Generate ssh key:
 
 `
-aah-keygen (accept all default settings)
+ssh-keygen (accept all default settings)
 `
 
 Copy this key to all machines:
@@ -66,7 +66,10 @@ Copy this key to all machines:
 | Ubuntu 22 | ssh-copy-id ansible@172.16.128.4 | confirm and give password to user in machine ubuntu 22 (default passwort to user ansible is ansible) |
 | Ubuntu 24 | ssh-copy-id ansible@172.16.128.5 | confirm and give password to user in machine ubuntu 24 (default passwort to user ansible is ansible) |
 | Debian Bookworm | ssh-copy-id ansible@172.16.128.6 | confirm and give password to user in machine Debian Bookworm (default passwort to user ansible is ansible) |
-
+| Fedora 41 | ssh-copy-id ansible@172.16.128.7 | confirm and give password to user in machine Fedora 41 (default passwort to user ansible is ansible) |
+| AlmaLinux 9.5 | ssh-copy-id ansible@172.16.128.8 | confirm and give password to user in machine AlmaLinux 9.5 (default passwort to user ansible is ansible) |
+| AlmaLinux 9.5 min | ssh-copy-id ansible@172.16.128.9 | confirm and give password to user in machine AlmaLinux 9.5 min (default passwort to user ansible is ansible) |
+| RockyLinux 9 | ssh-copy-id ansible@172.16.128.10 | confirm and give password to user in machine RockyLinux 9 (default passwort to user ansible is ansible) |
 
 
 ### Login to others system (e.q. Ubintu 22):
@@ -74,6 +77,6 @@ ssh ansible@172.16.128.4
 (password ansible)
 
 Generate ssh key:
-aah-keygen (accept all default settings)
+ssh-keygen (accept all default settings)
 Copy this key to host machines:
 ssh-copy-id ansible@172.16.128.2 confirm and give password to user in machine host (default passwort to user ansible is ansible)
