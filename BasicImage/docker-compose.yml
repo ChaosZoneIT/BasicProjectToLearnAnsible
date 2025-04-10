@@ -1,0 +1,23 @@
+services:
+  vps_ubuntu_22_image:
+    build: ./ubuntu22/
+    image: vps-ubuntu-22-image 
+  vps_ubuntu_24_image:
+    build: ./ubuntu24/
+    image: vps-ubuntu-24-image
+  vps_debian_bookworm_image:
+    build: ./debian-bookworm/
+    image: vps-debian-bookworm-image
+  vps_fedora_41_image:
+    build: ./fedora41/
+    image: vps-fedora-41-image
+  vps_alma_9_5_image:
+    build: ./almalinux9.5/
+    image: vps-alma-9.5-image
+  vps_alma_9_5_min_image:
+    build: ./almalinux9.5-min/
+    image: vps-alma-9.5-min-image
+  vps_rocky_9_image:
+    build: ./rockylinux9/
+    image: vps-rocky-9-image
+

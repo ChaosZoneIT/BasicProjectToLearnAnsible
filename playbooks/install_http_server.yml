@@ -1,0 +1,20 @@
+--- # Install www servise
+- hosts: ubuntu
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+  tasks:
+   - name: Install apache for Ubuntu/Debian
+     action: >
+      {{ ansible_pkg_mgr }} name=apache2 state=present update_cache=yes
+     when: ansible_os_family=="Debian"
+
+   - name: Install apache for RedHat/Fedora/Alma/Rocky
+     action: >
+      {{ ansible_pkg_mgr }} name=httpd state=present update_cache=yes
+     when: ansible_os_family=="RedHat"
+
+# Sprawdzamy czy jest przed wykonaniem i po wykonaniu
+# service --status-all
+# service apache2 status

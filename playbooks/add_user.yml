@@ -1,0 +1,17 @@
+--- # Add user
+- hosts: ubuntu
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+  tasks:
+   - name: Adding user to the system
+     user:
+       name: artur
+       shell: /bin/bash
+       groups: adm
+       append: yes
+
+# Sprawdzanie czy sie dodał
+# grep artur /etc/passwd
+# grep adm /etc/group

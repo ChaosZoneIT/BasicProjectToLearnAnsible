@@ -1,0 +1,11 @@
+--- # Create file
+- hosts: ubuntu
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+  tasks:
+   - name: Create file
+     file:
+       path: /tmp/firstfile.txt
+       state: touch

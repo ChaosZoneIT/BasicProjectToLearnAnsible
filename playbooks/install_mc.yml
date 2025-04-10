@@ -1,0 +1,10 @@
+--- # Install mc
+- hosts: ubuntu
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+  tasks:
+   - name: Install mc
+     action: >
+      {{ ansible_pkg_mgr }} name=mc state=present update_cache=yes

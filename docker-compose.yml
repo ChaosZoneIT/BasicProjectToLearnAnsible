@@ -1,0 +1,74 @@
+services:
+  local_computer:
+    build: ./vps-host/
+    container_name: Ansible_host
+    image: server-ansible-host
+    tty: true
+    volumes:
+      - ./hosts/hosts:/etc/ansible/hosts
+      - ./playbooks/:/playbooks/
+    networks:
+      ansiblenetworks:
+        ipv4_address: 172.16.128.2
+  vps_ubuntu_22:
+    build: ./vps/ubuntu22/
+    container_name: VPS_Ubuntu-22
+    image: server-vps-ubuntu-22
+    tty: true
+    networks:
+      ansiblenetworks:
+        ipv4_address: 172.16.128.4
+  vps_ubuntu_24:
+    build: ./vps/ubuntu24/
+    container_name: VPS_Ubuntu-24
+    image: server-vps-ubuntu-24
+    tty: true
+    networks:
+      ansiblenetworks:
+        ipv4_address: 172.16.128.5
+  vps_debian_bookworm:
+    build: ./vps/debian-bookworm/
+    container_name: VPS_Debian-bookworm
+    image: server-vps-debian-bookworm
+    tty: true
+    networks:
+      ansiblenetworks:
+        ipv4_address: 172.16.128.6
+  vps_fedora_41:
+    build: ./vps/fedora41/
+    container_name: VPS_Fedora-41
+    image: server-vps-fedora-41
+    tty: true
+    networks:
+      ansiblenetworks:
+        ipv4_address: 172.16.128.7
+  vps_alma_9_5:
+    build: ./vps/almalinux9.5/
+    container_name: VPS_AlmaLinux-9.5
+    image: server-vps-alma-9.5
+    tty: true
+    networks:
+      ansiblenetworks:
+        ipv4_address: 172.16.128.8
+  vps_alma_9_5_min:
+    build: ./vps/almalinux9.5-min/
+    container_name: VPS_AlmaLinux-9.5-min
+    image: server-vps-alma-9.5-min
+    tty: true
+    networks:
+      ansiblenetworks:
+        ipv4_address: 172.16.128.9
+  vps_rocky_9:
+    build: ./vps/rockylinux9/
+    container_name: VPS_Rockylinux-9
+    image: server-vps-rocky-9
+    tty: true
+    networks:
+      ansiblenetworks:
+        ipv4_address: 172.16.128.10
+
+networks:
+  ansiblenetworks:
+    ipam:
+      config:
+        - subnet: 172.16.128.0/24
